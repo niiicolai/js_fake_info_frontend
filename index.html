@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Personal Data Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Fake Personal Data Generator</h1>
+    </header>
+    <main>
+        <section id="description">
+            <p>This application generates fake personal data for Danish persons.</p>
+        </section>
+        <form id="frmGenerate">
+            <fieldset>
+                <div id="person">
+                    <input type="radio" name="fake-data" id="chkPerson" checked>
+                    <input type="number" id="txtNumberPersons" min="1" max="100" value="1" required>
+                    <label for="chkPerson">person(s)</label>
+                </div>
+                <div id="partialOptions">
+                    <input type="radio" name="fake-data" id="chkPartialOptions">
+                    <label for="chkPartialOptions">Partial generation:</label>
+                    <select id="cmbPartialOptions">
+                        <option value="cpr" selected>CPR</option>
+                        <option value="name-gender">Name and gender</option>
+                        <option value="name-gender-dob">Name, gender and date of birth</option>
+                        <option value="cpr-name-gender">CPR, name and gender</option>
+                        <option value="cpr-name-gender-dob">CPR, name, gender and date of birth</option>
+                        <option value="address">Address</option>
+                        <option value="phone">Phone number</option>
+                    </select>
+                </div>
+                <div id="submit">
+                    <input type="submit" value="Generate">
+                </div>
+            </fieldset>
+        </form>
+        <section id="output"></section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Arturo Mora-Rioja</p>
+    </footer>
+    <template id="person">
+        <article class="personCard">
+            <p class="cpr">CPR: <span class="cprValue"></span></p>
+            <p class="firstName">First name: <span class="firstNameValue"></span></p>
+            <p class="lastName">Last name: <span class="lastNameValue"></span></p>
+            <p class="gender">Gender: <span class="genderValue"></span></p>
+            <p class="dob">Date of birth: <span class="dobValue"></span></p>
+            <div class="address">
+                <p>Address:</p>
+                <div>
+                    <!-- Street, number, floor and door -->
+                    <p class="streetValue"></p> 
+                    <!-- Postal code and town name -->
+                    <p class="townValue"></p>
+                </div>
+            </div>
+            <p class="phoneNumber">Phone number: <span class="phoneNumberValue"></span></p>
+        </article>
+    </template>
+</body>
+</html>
