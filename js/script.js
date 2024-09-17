@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost/hp_fake_info';
+const baseUrl = 'http://localhost/php_fake_info';
 
 document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -18,7 +18,6 @@ document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
     // API call
     fetch(baseUrl + endpoint)
     .then(response => {
-        console.log('Hey');
         if (!response.ok) {
             handleError();
         } else {
@@ -26,12 +25,46 @@ document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
         }
     })
     .then(handlePersonData)
-    .catch(handleError);
+    .catch((error) => {
+        console.log('Catch');
+        handleError();
+    });
 });
 
 const handlePersonData = (data) => {
-    console.log(data);
+    const output = document.querySelector('#output');
+    output.innerHTML = '';
 
+    const personCard = document.importNode(document.getElementById('personTemplate').content, true);
+    if (data.CPR !== undefined) {
+        personCard.querySelector('.cprValue').innerText = data.CPR;
+        personCard.querySelector('.cpr').classList.remove('hidden');
+    }
+    if (data.firstName !== undefined) {
+        personCard.querySelector('.firstNameValue').innerText = data.firstName;
+        personCard.querySelector('.lastNameValue').innerText = data.lastName;
+        personCard.querySelector('.firstName').classList.remove('hidden');
+        personCard.querySelector('.lastName').classList.remove('hidden');
+    }    
+    if (data.gender !== undefined) {
+        personCard.querySelector('.genderValue').innerText = data.gender;
+        personCard.querySelector('.gender').classList.remove('hidden');
+    }        
+    if (data.birthDate !== undefined) {
+        personCard.querySelector('.dobValue').innerText = data.birthDate;
+        personCard.querySelector('.dob').classList.remove('hidden');
+    }
+    if (data.address !== undefined) {
+        personCard.querySelector('.streetValue').innerText = `${data.address.street} ${data.address.number}, ${data.address.floor}.${data.address.door}`;
+        personCard.querySelector('.townValue').innerText = `${data.address.postal_code} ${data.address.town_name}`;
+        personCard.querySelector('.address').classList.remove('hidden');
+    }
+    if (data.phoneNumber !== undefined) {
+        personCard.querySelector('.phoneNumberValue').innerText = data.phoneNumber;
+        personCard.querySelector('.phoneNumber').classList.remove('hidden');
+    }
+
+    output.appendChild(personCard);
 };
 
 const handleError = () => {

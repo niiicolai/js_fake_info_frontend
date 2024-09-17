@@ -83,6 +83,9 @@ footer {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
 .error {
     color: var(--colorError);
 }

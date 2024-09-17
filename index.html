@@ -45,14 +45,14 @@
     <footer>
         <p>&copy; 2024 Arturo Mora-Rioja</p>
     </footer>
-    <template id="person">
+    <template id="personTemplate">
         <article class="personCard">
-            <p class="cpr">CPR: <span class="cprValue"></span></p>
-            <p class="firstName">First name: <span class="firstNameValue"></span></p>
-            <p class="lastName">Last name: <span class="lastNameValue"></span></p>
-            <p class="gender">Gender: <span class="genderValue"></span></p>
-            <p class="dob">Date of birth: <span class="dobValue"></span></p>
-            <div class="address">
+            <p class="hidden cpr">CPR: <span class="cprValue"></span></p>
+            <p class="hidden firstName">First name: <span class="firstNameValue"></span></p>
+            <p class="hidden lastName">Last name: <span class="lastNameValue"></span></p>
+            <p class="hidden gender">Gender: <span class="genderValue"></span></p>
+            <p class="hidden dob">Date of birth: <span class="dobValue"></span></p>
+            <div class="hidden address">
                 <p>Address:</p>
                 <div>
                     <!-- Street, number, floor and door -->
@@ -61,7 +61,7 @@
                     <p class="townValue"></p>
                 </div>
             </div>
-            <p class="phoneNumber">Phone number: <span class="phoneNumberValue"></span></p>
+            <p class="hidden phoneNumber">Phone number: <span class="phoneNumberValue"></span></p>
         </article>
     </template>
 </body>
