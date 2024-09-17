@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost/php_fake_info';
+const baseUrl = 'http://localhost/hp_fake_info';
 
 document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -17,11 +17,32 @@ document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
 
     // API call
     fetch(baseUrl + endpoint)
-    .then(response => response.json())
+    .then(response => {
+        console.log('Hey');
+        if (!response.ok) {
+            handleError();
+        } else {
+            return response.json();
+        }
+    })
     .then(handlePersonData)
-
+    .catch(handleError);
 });
 
 const handlePersonData = (data) => {
     console.log(data);
+
+};
+
+const handleError = () => {
+    const output = document.querySelector('#output');
+    
+    output.innerHTML = 
+    '<p>There was a problem communicating with the API</p>';
+    output.classList.add('error');
+
+    setTimeout(() => {
+        output.innerHTML = '';
+        output.classList.remove('error');
+    }, 2000);
 };

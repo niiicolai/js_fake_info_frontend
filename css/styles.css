@@ -7,6 +7,7 @@
     --colorPrimary: #20408A;
     --colorSecondary: lightgrey;
     --colorTertiary: whitesmoke;
+    --colorError: red;
 
     --fontMain: 'Raleway', Arial, Helvetica, sans-serif;
 }
@@ -60,6 +61,10 @@ main {
             }            
         }
     }
+
+    #output {
+        margin-top: 1rem;
+    }
 }
 
 footer {
@@ -76,4 +81,8 @@ footer {
     color: var(--colorTextSecondary);
     background-color: var(--colorPrimary);
     text-align: center;
+}
+
+.error {
+    color: var(--colorError);
 }
