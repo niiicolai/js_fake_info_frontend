@@ -100,3 +100,8 @@ footer {
         font-weight: bold;
     }
 }
+.personCard:not(:last-of-type) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: thin solid var(--colorPrimary);
+}
