@@ -1,17 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
+@import '_variables.css';
 
-:root {
-    --colorTextPrimary: black;
-    --colorTextSecondary: floralwhite;
-
-    --colorPrimary: #20408A;
-    --colorSecondary: lightgrey;
-    --colorTertiary: whitesmoke;
-    --colorError: red;
-
-    --fontMain: 'Raleway', Arial, Helvetica, sans-serif;
-}
-  
 * {
     padding: 0;
     margin: 0;
@@ -64,6 +52,9 @@ main {
 
     #output {
         margin-top: 1rem;
+        padding: 1rem;
+        border: thin solid var(--colorTextPrimary);
+        border-radius: 0.5rem;
     }
 }
 
@@ -84,8 +75,28 @@ footer {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 .error {
     color: var(--colorError);
+}
+
+.address {
+    grid-row-end: span 2;
+    display: flex;
+    flex-flow: row nowrap;
+    > p {
+        margin-right: 1rem;
+    }
+}
+.personCard {
+    display: grid;
+    grid-template-areas:
+        "leftColumn rightColumn";
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1rem;
+    line-height: 1.5rem;
+    [grid-area=rightColumn] {
+        font-weight: bold;
+    }
 }

@@ -40,28 +40,26 @@
                 </div>
             </fieldset>
         </form>
-        <section id="output"></section>
+        <section id="output" class="hidden"></section>
     </main>
     <footer>
         <p>&copy; 2024 Arturo Mora-Rioja</p>
     </footer>
     <template id="personTemplate">
         <article class="personCard">
-            <p class="hidden cpr">CPR: <span class="cprValue"></span></p>
-            <p class="hidden firstName">First name: <span class="firstNameValue"></span></p>
-            <p class="hidden lastName">Last name: <span class="lastNameValue"></span></p>
-            <p class="hidden gender">Gender: <span class="genderValue"></span></p>
-            <p class="hidden dob">Date of birth: <span class="dobValue"></span></p>
-            <div class="hidden address">
-                <p>Address:</p>
-                <div>
-                    <!-- Street, number, floor and door -->
-                    <p class="streetValue"></p> 
-                    <!-- Postal code and town name -->
-                    <p class="townValue"></p>
-                </div>
-            </div>
-            <p class="hidden phoneNumber">Phone number: <span class="phoneNumberValue"></span></p>
+            <p class="hidden cpr" grid-area="leftColumn">CPR: </p><p class="hidden cprValue" grid-area="rightColumn"></p>
+            <p class="hidden firstName" grid-area="leftColumn">First name: </p><p class="hidden firstNameValue" grid-area="rightColumn"></p>
+            <p class="hidden lastName" grid-area="leftColumn">Last name: </p><p class="hidden lastNameValue" grid-area="rightColumn"></p>
+            <p class="hidden gender" grid-area="leftColumn">Gender: </p><p class="hidden genderValue" grid-area="rightColumn"></p>
+            <p class="hidden dob" grid-area="leftColumn">Date of birth: </p><p class="hidden dobValue" grid-area="rightColumn"></p>
+            <p class="hidden address" grid-area="leftColumn">Address:</p>
+            <!-- <div> -->
+                <!-- Street, number, floor and door -->
+                <p class="hidden streetValue" grid-area="rightColumn"></p> 
+                <!-- Postal code and town name -->
+                <p class="hidden townValue" grid-area="rightColumn"></p>
+            <!-- </div> -->
+            <p class="hidden phoneNumber" grid-area="leftColumn">Phone number: </p><p class="hidden phoneNumberValue" grid-area="rightColumn"></p>
         </article>
     </template>
 </body>

@@ -37,34 +37,51 @@ const handlePersonData = (data) => {
 
     const personCard = document.importNode(document.getElementById('personTemplate').content, true);
     if (data.CPR !== undefined) {
-        personCard.querySelector('.cprValue').innerText = data.CPR;
+        const cprValue = personCard.querySelector('.cprValue');
+        cprValue.innerText = data.CPR;
+        cprValue.classList.remove('hidden');
         personCard.querySelector('.cpr').classList.remove('hidden');
     }
     if (data.firstName !== undefined) {
-        personCard.querySelector('.firstNameValue').innerText = data.firstName;
-        personCard.querySelector('.lastNameValue').innerText = data.lastName;
+        const firstNameValue = personCard.querySelector('.firstNameValue');
+        firstNameValue.innerText = data.firstName;
+        firstNameValue.classList.remove('hidden');
+        const lastNameValue = personCard.querySelector('.lastNameValue');
+        lastNameValue.innerText = data.lastName;
+        lastNameValue.classList.remove('hidden');
         personCard.querySelector('.firstName').classList.remove('hidden');
         personCard.querySelector('.lastName').classList.remove('hidden');
     }    
     if (data.gender !== undefined) {
-        personCard.querySelector('.genderValue').innerText = data.gender;
+        const genderValue = personCard.querySelector('.genderValue');
+        genderValue.innerText = data.gender;
+        genderValue.classList.remove('hidden');
         personCard.querySelector('.gender').classList.remove('hidden');
     }        
     if (data.birthDate !== undefined) {
-        personCard.querySelector('.dobValue').innerText = data.birthDate;
+        const dobValue = personCard.querySelector('.dobValue');
+        dobValue.innerText = data.birthDate;
+        dobValue.classList.remove('hidden');
         personCard.querySelector('.dob').classList.remove('hidden');
     }
     if (data.address !== undefined) {
-        personCard.querySelector('.streetValue').innerText = `${data.address.street} ${data.address.number}, ${data.address.floor}.${data.address.door}`;
-        personCard.querySelector('.townValue').innerText = `${data.address.postal_code} ${data.address.town_name}`;
+        const streetValue = personCard.querySelector('.streetValue');
+        streetValue.innerText = `${data.address.street} ${data.address.number}, ${data.address.floor}.${data.address.door}`;
+        streetValue.classList.remove('hidden');
+        const townValue = personCard.querySelector('.townValue');
+        townValue.innerText = `${data.address.postal_code} ${data.address.town_name}`;
+        townValue.classList.remove('hidden');
         personCard.querySelector('.address').classList.remove('hidden');
     }
     if (data.phoneNumber !== undefined) {
-        personCard.querySelector('.phoneNumberValue').innerText = data.phoneNumber;
+        const phoneNumberValue = personCard.querySelector('.phoneNumberValue');
+        phoneNumberValue.innerText = data.phoneNumber;
+        phoneNumberValue.classList.remove('hidden');
         personCard.querySelector('.phoneNumber').classList.remove('hidden');
     }
 
     output.appendChild(personCard);
+    output.classList.remove('hidden');
 };
 
 const handleError = () => {
