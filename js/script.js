@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost/php_fake_info';
+import { baseUrl } from './info.js';
 
 document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
     e.preventDefault();
