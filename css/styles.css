@@ -99,6 +99,9 @@ footer {
     [grid-area=rightColumn] {
         font-weight: bold;
     }
+    [grid-area=rightColumn] {
+        overflow: auto;
+    }
 }
 .personCard:not(:last-of-type) {
     margin-bottom: 1rem;
