@@ -1,5 +1,10 @@
 # Fake Data Generator Frontend
 
+Start server
+```
+npm start
+```
+
 ## Purpose
 Frontent for the [Fake Data Generator](https://github.com/arturomorarioja/fake_info), which generates fake data of nonexistent Danish persons.
 
