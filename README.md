@@ -1,5 +1,9 @@
 # Fake Data Generator Frontend
 
+```
+npm install
+```
+
 Start server
 ```
 npm start
