@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Fake Personal Data Generator</h1>
+        <h1 data-testid="fake-person-data-generator-title">Fake Personal Data Generator</h1>
     </header>
     <main>
         <section id="description">
@@ -18,32 +18,32 @@
         <form id="frmGenerate">
             <fieldset>
                 <div id="person">
-                    <input type="radio" name="fake-data" id="chkPerson" checked>
-                    <input type="number" id="txtNumberPersons" min="1" max="100" value="1" required>
+                    <input data-testid="check-generate-full-person" type="radio" name="fake-data" id="chkPerson" checked>
+                    <input data-testid="input-number-of-people-to-generate" type="number" id="txtNumberPersons" min="1" max="100" value="1" required>
                     <label for="chkPerson">person(s)</label>
                 </div>
                 <div id="partialOptions">
-                    <input type="radio" name="fake-data" id="chkPartialOptions">
+                    <input data-testid="check-generate-partial-person" type="radio" name="fake-data" id="chkPartialOptions">
                     <label for="chkPartialOptions">Partial generation:</label>
-                    <select id="cmbPartialOptions">
-                        <option value="cpr" selected>CPR</option>
-                        <option value="name-gender">Name and gender</option>
-                        <option value="name-gender-dob">Name, gender and birthdate</option>
-                        <option value="cpr-name-gender">CPR, name and gender</option>
-                        <option value="cpr-name-gender-dob">CPR, name, gender, birthdate</option>
-                        <option value="address">Address</option>
-                        <option value="phone">Phone number</option>
+                    <select data-testid="drop-down-partial-options" id="cmbPartialOptions">
+                        <option data-testid="drop-down-option-cpr" value="cpr" selected>CPR</option>
+                        <option data-testid="drop-down-option-name-gender" value="name-gender">Name and gender</option>
+                        <option data-testid="drop-down-option-name-gender-dob" value="name-gender-dob">Name, gender and birthdate</option>
+                        <option data-testid="drop-down-option-cpr-name-gender" value="cpr-name-gender">CPR, name and gender</option>
+                        <option data-testid="drop-down-option-cpr-name-gender-dob" value="cpr-name-gender-dob">CPR, name, gender, birthdate</option>
+                        <option data-testid="drop-down-option-address" value="address">Address</option>
+                        <option data-testid="drop-down-option-phone" value="phone">Phone number</option>
                     </select>
                 </div>
                 <div id="submit">
-                    <input type="submit" value="Generate">
+                    <input data-testid="generate-data-submit-button" type="submit" value="Generate">
                 </div>
             </fieldset>
         </form>
-        <section id="output" class="hidden"></section>
+        <section data-testid="generated-people-output" id="output" class="hidden"></section>
     </main>
     <footer>
-        <p>&copy; 2024 Arturo Mora-Rioja</p>
+        <p>&copy; 2024 Nicolai, Oliver, Daniel and Marcus</p>
     </footer>
     <template id="personTemplate">
         <article class="personCard">
