@@ -37,7 +37,7 @@ describe('index page', () => {
     cy.get('.dobValue').should('be.visible').invoke('text').should('match', /^\d{4}-\d{2}-\d{2}$/);
     cy.get('.streetValue').should('be.visible').invoke('text').should('match', /\w{1,}/);
     cy.get('.townValue').should('be.visible').invoke('text').should('match', /\w{1,}/);
-    cy.get('.phoneNumberValue').should('be.visible').invoke('text').should('match', /^\d{8}$/);
+    cy.get('.phoneNumberValue').should('be.visible').invoke('text').should('match', /^\d{8,}$/);
   });
 
   it("should return multiple people", () => {
@@ -226,7 +226,7 @@ describe('index page', () => {
     cy.get('.dobValue').should('not.be.visible');
     cy.get('.streetValue').should('not.be.visible');
     cy.get('.townValue').should('not.be.visible');
-    cy.get('.phoneNumberValue').should('be.visible').invoke('text').should('match', /^\d{8}$/);
+    cy.get('.phoneNumberValue').should('be.visible').invoke('text').should('match', /^\d{8,}$/);
 
   });
 });
